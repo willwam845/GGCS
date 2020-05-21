@@ -114,6 +114,7 @@ Access the network service at ggcs-bx01.allyourbases.co port 9171 and find a way
 ```
 For this challenge, we need to get the value from 1337 to 1. 
 We can do this with a format string, specifically `%n`
+
 Doing it once on the remote by sending `a%n` gives us the output
 ```
 Object validated, contents is 'Rig'
