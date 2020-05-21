@@ -7,4 +7,5 @@ Hint: Think about places you could get a list of common directories to check for
 
 I decided to run dirb on the webpage to see if I could find anything.
 
-![Web](BE03.png)
+
+![Dirb results](/Web/WE01.PNG)
