@@ -94,3 +94,6 @@ Note: You can log in as a regular user with the username: linus and the password
 ```
 We can log in with these credentials, but it appears to just give us a blank page telling us we have logged in.
 ![Logged in?](/images/WM02.png)
+It appears that when we log in, a cookie is set.
+![Cookie!](/images/WM02a.png)
+
