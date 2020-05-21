@@ -94,6 +94,47 @@ Note: You can log in as a regular user with the username: linus and the password
 ```
 We can log in with these credentials, but it appears to just give us a blank page telling us we have logged in.
 ![Logged in?](/images/WM02.png)
+
 It appears that when we log in, a cookie is set.
 ![Cookie!](/images/WM02a.png)
 
+There is an id parameter, and then the data, which contains the name.
+Perhaps we can bruteforce this id parameter and then try and log in as a new user.
+I ended up doing this manually because I wasn't able to get my script to work, and get the value as 33.
+So simply setting the cookie to {"id": 33} will log you in as "james", and then get you the flag!
+![Logged in as james, and there's the flag!](/images/WM02b.png)
+
+Flag: IncREMentaLl_SessIoNs-1920
+
+# WM03
+```
+Visit the site at https://ggcs-wm03.allyourbases.co and investigate the API that serves the page to find a way to get the flag.
+```
+We can refresh the page and see that the JSON object of`{getUser: 1}` is being sent.
+![Stuff being sent](/images/WM03.png)
+
+After trying to mess around with the value, which didn't give any results, I tried messing around with the actual function.
+If I changed the getUser to something random, I got a weird result:
+`curl -X POST https://oo5apsmnc8.execute-api.eu-west-1.amazonaws.com/stag/wm03 -d '{"a":"1"}'`
+
+![owo what's this!](/images/WM03a.png)
+
+We seem to have been able to get the list of valid keys, and there's one that is `getFlag`! So we should be able to get the flag right?
+`curl -X POST https://oo5apsmnc8.execute-api.eu-west-1.amazonaws.com/stag/wm03 -d '{"getFlag":"1"}'`
+
+![No flag :(](/images/WM03b.png)
+
+It seems we need an api token to use this.
+There is another key called `config`, let's see what we can get out of that.
+`curl -X POST https://oo5apsmnc8.execute-api.eu-west-1.amazonaws.com/stag/wm03 -d '{"config":"1"}'`
+
+![ooo an api token!](/images/WM03c.png)
+
+And it looks like we were able to get the api token!
+So now we can get the flag with `getFlag` by just adding the parameter `{"api_token": "supersecret31337apitoken"}`
+`curl -X POST https://oo5apsmnc8.execute-api.eu-west-1.amazonaws.com/stag/wm03 -d '{"getFlag":"1", "api_token": "supersecret31337apitoken"}'`
+
+![Finally! Flag!](/images/WM03d.png)
+
+And there we can see the flag in the result.
+Flag: LAx_AUThEntiCaTION-:(
