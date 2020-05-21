@@ -93,4 +93,4 @@ Visit the site at https://ggcs-wm02.allyourbases.co and find a way to log into t
 Note: You can log in as a regular user with the username: linus and the password: torvalds
 ```
 We can log in with these credentials, but it appears to just give us a blank page telling us we have logged in.
-![Logged in?](/images/WM02.PNG)
+![Logged in?](/images/WM02.png)
