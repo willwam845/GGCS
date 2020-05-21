@@ -64,7 +64,8 @@ We can see again, there is that line that compares bytes.
    0x00000744 <+215>:   cmp    BYTE PTR [ebp-0x9],0x66
 ```
 0x66 is "f" in ASCII, but I wasn't able to get the placeholder flag, so I looked again.
-It appears that we also need to add a ":)" before our f, and so I kept trying, eventually getting the sample flag.
+I opened it up in `ghidra`, and saw the memcmp function, which compared the previous two bytes to `:)`
+It appears that we also need to add a ":)" before our f, and so I kept bruteforcing the padding, eventually getting the sample flag.
 
 Final payload: `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:)f`
 
