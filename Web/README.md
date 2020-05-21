@@ -46,5 +46,7 @@ As we can see, there is a hidden page called /61829201829023.html
 Therefore, we can visit this page at https://ggcs-we03.allyourbases.co/61829201829023.html and see what we can find.
 And as it says in the briefing, the flag is right there!
 ![Flag!](/images/WE03a.png)
+Flag: NO_CrAwLing_Plz_0192
+
 
 
