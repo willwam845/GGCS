@@ -35,6 +35,7 @@ There is an interesting line which is
 This compares the byte at `ebp-0x9` with `0x62`, which is "b".
 After a bit of experimentation, I was able to get the sample flag on local by adding 50 * "a" and then adding a "b" on the end.
 We can do the same on the remote to get the flag.
+
 Final payload: `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAb`
 
 Flag: c0MinG-Up_bs-8788
@@ -64,6 +65,7 @@ We can see again, there is that line that compares bytes.
 ```
 0x66 is "f" in ASCII, but I wasn't able to get the placeholder flag, so I looked again.
 It appears that we also need to add a ":)" before our f, and so I kept trying, eventually getting the sample flag.
+
 Final payload: `AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:)f`
 
 Flag: caNaRY-CoalMINE-2811
