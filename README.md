@@ -2,6 +2,8 @@
 Writeups for the GGCS CTF that happened between 20th and 21st of May
 
 I ended up 100%ing this CTF, so I thought I would make some writeups(or at least attempt to)
+
+
 Please note, I had to rush the heck out of these in order to have them done for when the CTF was over (especially binary)
 
 # Thoughts on the CTF
