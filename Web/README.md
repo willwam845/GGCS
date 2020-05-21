@@ -209,6 +209,7 @@ for (; i < h[b("0x23", "yOrU")]; i++) {
 ```
 
 And then the flag will appear as the output in the console.
+
 ![Flag!](/images/WH03c.png)
 
 Flag: rANDom_VICTORy_113
