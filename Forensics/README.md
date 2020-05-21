@@ -28,6 +28,7 @@ Flag: cAnYOuReALLYSEEme-2322
 Download the file at https://ggcs-files.allyourbases.co/fe03.zip and find a way to retrieve the flag from the gif.
 ```
 Nothing seemed to pop out at first, so I ran strings on the gif.
+
 ![Interesting strings.](/images/FE03.png)
 
 There appears to be something else inside this gif, as this did not look like something a gif would have. 
