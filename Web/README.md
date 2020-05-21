@@ -138,3 +138,24 @@ So now we can get the flag with `getFlag` by just adding the parameter `{"api_to
 
 And there we can see the flag in the result.
 Flag: LAx_AUThEntiCaTION-:(
+
+# WH01
+```
+Access the site at https://ggcs-wh01.allyourbases.co and find and then read the contents of the flag file to get the flag.
+```
+We can see that this appears to be a sequel to the command injection challenge.
+After a bit of experimentation, I was able to get command execution, but we cannot use spaces, or else the filter will not allow us to inject the command.
+![Command execution](/images/WH01.png)
+
+So this just became a challenge of trying to do bash commands without using spaces.
+I was able to get around this by replacing spaces with ${IFS}, and that worked!
+If we then do `&&ls${IFS}-a`, we can see the ... dir, which is not standard, therefore we should look into it further.
+![Found the dir!](/images/WH01a.png)
+
+We can then do `&&ls${IFS}-a${IFS}...` to look inside it to see the `.flag.txt` file once again
+![Found the file!](/images/WH01b.png)
+
+Therefore, we can simply just use `&&cat${IFS}.../.flag.txt` to see the flag.
+![Flag!](/images/WH01c.png)
+
+Flag: SCUffeD_FiLTERing_1000
