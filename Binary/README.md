@@ -3,6 +3,7 @@
 Download the file at https://ggcs-files.allyourbases.co/be01.zip and find a way to get the flag from the program.
 ```
 Simply running strings on the file will get us our flag!
+
 ![Simple strings](/images/BE01.png)
 
 Flag: sTriNGS-r-EZ-7819
@@ -13,6 +14,7 @@ Download the file at https://ggcs-files.allyourbases.co/be02.zip and find out wh
 ```
 We are given some c code, so we can compile this all with `gcc`. Command used is:`gcc program.c -o program`.
 And then simply running the generated ELF gives us the flag.
+
 ![Using gcc](/images/BE02.png)
 
 Flag: c0mpILE-tIME_1822
