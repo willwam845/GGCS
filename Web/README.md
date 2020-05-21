@@ -224,9 +224,12 @@ The website hints at some serialization it seems.
 We can see a cookie when once we submit, and it appears to be in pickle format.
 So, we see what we can do with that.
 There is a method with pickling called `__reduce__`, which gets called when it is pickled. This method is able to hold a tuple which contains instructions for unpickling.
-We can then try and make it return the flag variable instead with eval.
-It took a couple tries and tweaking, but I ended up making this script, which will return the flag variable if we send this as the userdata.
-
+This method takes a command and then its arguments, so `(command(arg1,arg2))`
+However, we want to get the variable flag, so we can replace this with something like `return dict({'name':flag})`
+The problem is however, not everything is executed on the remote, where we want it to execute, as we want to get the value of flag on the remote.
+So simply doing `dict({'name':flag})` won't work, as flag is evaluated locally, which is not what we want.
+We can then try using `eval()`, as eval has access to the same things as the code it is in, which means we should be able to access the flag variable if we can get `return (eval, ("dict({'name':flag})",))` to execute remotely.
+We do this by defining a class, where we place our payload to get the flag remotely, as the class will be constructed remotely.
 ```
 import pickle
 import codecs
