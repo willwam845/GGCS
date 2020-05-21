@@ -90,4 +90,5 @@ The solution was to bitwise XOR the 2 images.
 The output image was then a QR code you could scan and get the flag.
 `convert 1.png 2.png -fx "(((255*u)&(255*(1-v)))|((255*(1-u))&(255*v)))/255" img_out`
 We can then scan the `img_out` file to get the flag.
+
 Flag: xOROROR-91822
