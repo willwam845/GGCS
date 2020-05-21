@@ -14,6 +14,8 @@ Giving the output of
 ```
 IN CRYPTOGRAPHY, A SUBSTITUTION CIPHER IS A METHOD OF ENCRYPTING BY WHICH UNITS OF PLAINTEKT ARE REPLACED WITH CIPHERTEKT, ACCORDING TO A FIKED SYSTEM; THE "UNITS" MAY BE SINGLE LETTERS (THE MOST COMMON), PAIRS OF LETTERS, TRIPLETS OF LETTERS, MIKTURES OF THE ABOVE, AND SO FORTH. THE RECEIVER DECIPHERS THE TEKT BY PERFORMING THE INVERSE SUBSTITUTION. THE FLAG IS ASIMPLESUBSTITUTION
 ```
+![Breaking the message](/images/CE01.png)
+
 which gives us our flag!
 Flag: ASIMPLESUBSTITUTION
 
@@ -56,3 +58,26 @@ Which gave us our decrypted message, and our flag!
 The Advanced Encryption Standard (AES), also known by its original name Rijndael, is a specification for the encryption of electronic data established by the U.S. National Institute of Standards and Technology (NIST) in 2001. The flag is: RijNdaelMe-9912
 ```
 Flag: RijNdaelMe-9912
+
+# CE04
+```
+Download the file at https://ggcs-files.allyourbases.co/ce04.zip and solve the cipher to get the flag.
+
+Note: The flag is the encryption key used to encrypt the cipher.
+```
+Again, we have a lot of ciphertext.
+```
+Ulp Giysbssi ntpzsf wt e xptzcr cg iynrqdhwok lwpzopsumn eeph pm vwtyg s gsfjid zf abhssazgef Qostec nihvsft, fldev cb hii wptlsfg pj l veqkcfe. Me pmhzcmt e qzre ct dppjllhvopfxtn smpghjxfeigb.
+```
+And once again, it ended up being trying a bunch of things until it worked. 
+This encryption turned out to be a Vigenere cipher, and the flag was the encryption key
+I used `https://www.guballa.de/vigenere-solver` to get the flag.
+
+![Cracking the message](/images/CE04.png)
+
+It decoded with the key `bellasooo`
+```
+The Vigenere cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. It employs a form of polyalphabetic substitution.
+```
+As said in the briefing, the flag was the encryption key, and therefore the flag is `bellasooo`
+Flag: bellasooo
