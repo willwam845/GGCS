@@ -48,5 +48,44 @@ And as it says in the briefing, the flag is right there!
 ![Flag!](/images/WE03a.png)
 Flag: NO_CrAwLing_Plz_0192
 
+# WE04
+```
+Visit the news site at https://ggcs-we04.allyourbases.co and see if you can find a way to access the article without subscribing.
+```
 
+Nothing appears to pop out, so we look at the source code. 
+![Source code](/images/WE04.png)
+We can see that there is an interesting HTML comment:
+```
+<!--TODO: SEO is important to us, particularly Google's results are important!-->
+```
+The headline also hints at robots. 
+If we do a quick google search for Google and robots, we can see something called Googlebot.
+Right now the user agent is Applebot, so perhaps we need to change it to Googlebot?
+And sure enough, the flag was indeed there when I changed the user agent.
+![Changing the user agent](/images/WE04a.png)
+![Flag!](/images/WE04b.png)
+Flag: CrawlING-So-SlOwLY-8199
 
+# WM01
+```
+Access the site at https://ggcs-wm01.allyourbases.co and find and then read the contents of the flag file to get the flag.
+```
+We appear to just have a linux file system, where we choose a path and then it will perform the ls command.
+Perhaps then, we can use command injection, for example appending && and adding your command at the end.
+![Command injection worked!](/images/WM01.png)
+So then we can try and find this file.
+After trying to find the file in many different directories, I decided to try and find it in the directory where we were, and sure enough, if we did `ls -a`, we could see a file called `.flag.txt`.
+![Found the file!](/images/WM01a.png)
+We then just do `cat .flag.txt` to get the flag!
+![Flag!](/images/WM01b.png)
+Flag: unSAFE_eXecution_42
+
+# WM02
+```
+Visit the site at https://ggcs-wm02.allyourbases.co and find a way to log into the admin user without guessing a password.
+
+Note: You can log in as a regular user with the username: linus and the password: torvalds
+```
+We can log in with these credentials, but it appears to just give us a blank page telling us we have logged in.
+![Logged in?](/images/WM02.png)
