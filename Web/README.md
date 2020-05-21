@@ -7,4 +7,4 @@ Hint: Think about places you could get a list of common directories to check for
 
 I decided to run dirb on the webpage to see if I could find anything.
 
-![images](WE01.png)
+![../images](WE01.png)
