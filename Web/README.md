@@ -159,3 +159,55 @@ Therefore, we can simply just use `&&cat${IFS}.../.flag.txt` to see the flag.
 ![Flag!](/images/WH01c.png)
 
 Flag: SCUffeD_FiLTERing_1000
+
+# WH02
+```
+Visit the site at https://ggcs-wh02.allyourbases.co and see if you can find a way to get the flag.
+```
+
+After visiting the site, nothing seems to pop out at us immediately.
+The title of the page seems interesting, it feels like it wants us to get lost.
+![Nothing... interesting?](/images/WH02.png)
+
+More specifically, it wants us to get a 404 Not Found.
+After a lot of experimentation, I figured out that the template was Jinja2, which could be vulnerable to SSTI, or Server-Side Template Injection.
+I was able to test this by going to `https://ggcs-wh02.allyourbases.co/{{ 1 + 1}}`, which if it is vulnerable, we should get a result as 2.
+![We got SSTI!](/images/WH02a.png)
+
+And sure enough, we were able to get that.
+This means that we can do a bit of experimentation with this.
+After a lot more experimentation, I was able to dumb the local variables with {{ locals() }}, we can see a strange looking variable called `laksnd8quoqjknadaklsd9aodu892ja`, and we can see that its value is the flag!
+![Flag in the variable!](/images/WH02b.png)
+
+Flag: tEmPlATes-R-FuNN-2391
+
+# WH03
+```
+Visit the site at https://ggcs-wh03.allyourbases.co and see if you can find a way to get the flag.
+```
+The page seems to be empty at first.
+If we view source, we can see a large chunk of Javascript code, and suprisingly, it seems it wants us to deobsfuscate this!
+![That's... a lot of code.](/images/WH03.png)
+
+We can pop it into JSNICE and then deobsfuscate it.
+![Deobsfuscated.](/images/WH03a.png)
+
+We can then check out where it would print the flag. 
+The final point where it prints flag is where it prints 
+`"Flag: " + key;`
+![Important code](/images/WH03b.png)
+
+Therefore, we need to work out what key is.
+Key appears to be calculated a few lines above this, and so we can just take the code that calculates `key` and paste it into the console to run it.
+```
+var key = "";
+/** @type {number} */
+i = 0;
+for (; i < h[b("0x23", "yOrU")]; i++) {
+  key = key + h[i] + r[i];
+}
+```
+And then the flag will appear as the output in the console.
+![Flag!](/images/WH03c.png)
+
+Flag: rANDom_VICTORy_113
