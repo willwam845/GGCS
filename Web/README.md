@@ -207,6 +207,7 @@ for (; i < h[b("0x23", "yOrU")]; i++) {
   key = key + h[i] + r[i];
 }
 ```
+
 And then the flag will appear as the output in the console.
 ![Flag!](/images/WH03c.png)
 
