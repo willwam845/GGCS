@@ -78,6 +78,7 @@ And then running `fcrackzip` with these new words yields the password `Cartoon4`
 ![Password found!](/images/FM01a.png)
 
 We then use this password to unzip the file and get the flag.
+
 Flag: mangLINg-w0RDs-62517
 
 # FM02
