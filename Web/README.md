@@ -106,8 +106,6 @@ Perhaps we can bruteforce this id parameter and then try and log in as a new use
 I ended up doing this manually because I wasn't able to get my script to work, and get the value as 33.
 So simply setting the cookie to {"id": 33} will log you in as "james", and then get you the flag!
 
-![Logged in as james, and there's the flag!](/images/WM02b.png)
-
 Flag: IncREMentaLl_SessIoNs-1920
 
 # WM03
