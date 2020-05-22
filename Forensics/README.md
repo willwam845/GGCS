@@ -10,6 +10,7 @@ To crack this we can use the tool `fcrackzip`
 
 Resulting in us finding the password of "digital"
 We can then unzip the zip file with this password to get flag.txt and read the flag.
+
 Flag: z1P-Cr4CK-0910
 
 # FE02 
@@ -62,7 +63,7 @@ Flag: DoNTLosEYOURHeAD-1181
 Download the file at https://ggcs-files.allyourbases.co/fm01.zip and use the included word list to extract the flag.
 ```
 This time, using `fcrackzip` with the zip like we did last time doesn't appear to find a password.
-![Hmmm.. nothing...](/images/FM01.png)
+![Hmmm... nothing...](/images/FM01.png)
 
 There appears to be a new file called `policy.txt`
 ```
