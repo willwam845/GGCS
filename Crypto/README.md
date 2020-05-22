@@ -80,4 +80,5 @@ It decoded with the key `bellasooo`.
 The Vigenere cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. It employs a form of polyalphabetic substitution.
 ```
 As said in the briefing, the flag was the encryption key, and therefore the flag is `bellasooo`
+
 Flag: bellasooo
