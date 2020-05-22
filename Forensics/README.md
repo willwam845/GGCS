@@ -38,6 +38,7 @@ So, I put into good old CyberChef, and tried to extract any files.
 
 We can see there is an ELF, so I extracted it and ran it.
 And the flag was right there.
+
 ![Flag got!](/images/FE03b.png)
 
 Flag: EMbEddedFiLEz_0819
