@@ -55,6 +55,7 @@ Therefore, we must add it to patch it.
 ![Patching](/images/FE04a.png)
 
 We then simply run the ELF file to get the flag!
+
 ![Flag!](/images/FE04b.png)
 
 Flag: DoNTLosEYOURHeAD-1181
