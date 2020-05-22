@@ -45,6 +45,7 @@ Visiting the page, nothing seems to pop out at first, so I read the briefing aga
 It mentions a secret page, so my initial thought is to go to robots.txt, as there are often secret pages there.
 
 ![robots.txt](/images/WE03.png)
+
 As we can see, there is a hidden page called /61829201829023.html
 Therefore, we can visit this page at https://ggcs-we03.allyourbases.co/61829201829023.html and see what we can find.
 And as it says in the briefing, the flag is right there!
